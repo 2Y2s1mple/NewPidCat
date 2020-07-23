@@ -104,7 +104,6 @@ Work_Path = os.getcwd()
 #   Colorize Relate   #
 #######################
 
-
 def termcolor(fg=None, bg=None):
     codes = []
     if fg is not None: codes.append('3%d' % fg)
@@ -144,11 +143,9 @@ def allocate_color(tag):
         LAST_USED.append(color)
     return color
 
-
 ##########################
 # Shell Execute Wrapper  #
 ##########################
-
 
 def exec_shell_daemon(cmd):
     # My_Logger.info(cmd)
@@ -168,9 +165,12 @@ def exec_shell(cmd, t=120):
         ret['e'] = 'timeout'
     return ret
 
+
 def gen_log_file_name():
     filename = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S.log')
     return filename
+
+
 ##########################
 #   Parse command args   #
 ##########################
@@ -294,7 +294,6 @@ def prepare_from_args(args):
         while adb_clear.poll() is None:
             pass
 
-
     # Dealing with Use .pidcat_tags_ignore for filter.
     if args.pidcat_tags_ignore:
         try:
@@ -320,7 +319,6 @@ def prepare_from_args(args):
     My_Logger.debug(args.tag)
     My_Logger.debug(args.ignored_tag)
 
-
     return adb_command
 
 
@@ -342,6 +340,7 @@ TAGTYPES = {
     'E': colorize(' E ', fg=BLACK, bg=RED),
     'F': colorize(' F ', fg=BLACK, bg=RED),
 }
+
 
 ######################
 #   Message Utils    #
@@ -402,10 +401,6 @@ def parse_start_proc(line):
 
 def tag_in_tags_regex(tag, tags):
     return any(re.match(r'^' + t + r'$', tag) for t in map(str.strip, tags))
-
-##############################
-#   Global Variable Zone 2   #
-##############################
 
 
 def get_pids():
