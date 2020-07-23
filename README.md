@@ -1,5 +1,5 @@
 # New Pidcat 
->Since [JakeWharton/pidcat][1] was little bite out of date
+>Since [JakeWharton/pidcat][1] was little bit outdated.
 
 ## New Features
 - Compatible with Windows ([Windows Terminal][2] Only).
@@ -37,7 +37,7 @@ Step 4. Update profile and run with it:
 
 Step 0. Download NewPidcat   
 
-Step 1. Add to your shell $path   
+Step 1. Add to your shell `$path`   
 
 Step 2. Run with it:  
 `pidcat.py -t ActivityManager -i ThermalEngine`
