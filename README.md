@@ -37,7 +37,7 @@ Step 4. Update profile and run with it:
 
 Step 0. Download NewPidcat   
 
-Step 1. Add to your shell `$path`   
+Step 1. Copy somewhere in your `$path`   
 >e.g. `cp ./pidcat.py ~/bin/pidcat`
 
 Step 2. Run with it:  
