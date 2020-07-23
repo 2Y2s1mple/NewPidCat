@@ -2,5 +2,6 @@
 !ThermalEngine
 !ThermalTempInfoHelper
 !BtGatt.*
+!MiuiFaceFactory
 
 # Watch out：Once there is a line with no exclamation mark prefix, the effect of this configuration will be changed from blacklist to whitelist.

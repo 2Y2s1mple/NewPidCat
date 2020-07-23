@@ -298,12 +298,17 @@ def prepare_from_args(args):
     if args.pidcat_tags_ignore:
         try:
             with open(".pidcat_tags_ignore", mode='r', encoding='utf-8') as f:
+                file_content = f.readlines()
+                if len(file_content) < 1:
+                    raise FileNotFoundError
+
                 if not args.tag:
                     args.tag = []
                 if not args.ignored_tag:
                     args.ignored_tag = []
-                for line in f.readlines():
-                    if line[0] == '#' or line.strip():
+
+                for line in file_content:
+                    if line[0] == '#' or not line.strip():
                         continue
                     if line[0] == '!':
                         args.ignored_tag.append(line[1:].strip())
@@ -318,7 +323,9 @@ def prepare_from_args(args):
             except Exception as e:
                 print(e)
 
+    My_Logger.debug("args.tag:")
     My_Logger.debug(args.tag)
+    My_Logger.debug("ignored_tag.tag:")
     My_Logger.debug(args.ignored_tag)
 
     return adb_command
