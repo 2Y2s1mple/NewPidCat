@@ -30,17 +30,18 @@ Step 3. Add following two lines:
 Set-Alias -Name pidcat -Value NEW_PIDCAT`  
 
 Step 4. Update profile and run with it:  
->`pidcat -y -o`
+>`pidcat -h`
 
 
-### *Unix Terminal 
+### *unix Terminal 
 
 Step 0. Download NewPidcat   
 
 Step 1. Add to your shell `$path`   
+>e.g. `cp ./pidcat.py ~/bin/pidcat`
 
 Step 2. Run with it:  
-`pidcat.py -t ActivityManager -i ThermalEngine`
+`pidcat --current -c -o -y`
 
 
  [1]: https://github.com/JakeWharton/pidcat

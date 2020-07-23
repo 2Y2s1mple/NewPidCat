@@ -303,7 +303,7 @@ def prepare_from_args(args):
                 if not args.ignored_tag:
                     args.ignored_tag = []
                 for line in f.readlines():
-                    if line[0] == '#':
+                    if line[0] == '#' or line.strip():
                         continue
                     if line[0] == '!':
                         args.ignored_tag.append(line[1:].strip())
@@ -313,6 +313,8 @@ def prepare_from_args(args):
             try:
                 with open(".pidcat_tags_ignore", mode='w', encoding='utf-8') as f:
                     pass
+                print("[Error] Turn on -y with empty .pidcat_tags_ignore file.")
+                exit(-1)
             except Exception as e:
                 print(e)
 
@@ -441,7 +443,7 @@ if __name__ == '__main__':
     last_tag = None
     app_pid = None
 
-    My_Logger.info(my_args)
+    My_Logger.debug(my_args)
 
     while logcat_process.poll() is None:
         try:
